@@ -22,8 +22,8 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.0' # Flutter version အပြောင်းအလဲရှိနိုင်သည်
-          channel: 'stable'
+          channel: 'stable' # Version အသေမထားတော့ဘဲ နောက်ဆုံးထွက်ကို ယူမယ်
+          cache: true
 
       - name: Install Dependencies
         run: flutter pub get
