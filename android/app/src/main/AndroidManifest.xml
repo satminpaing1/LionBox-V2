@@ -21,6 +21,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.OBSERVE_GRANT_REVOKE_PERMISSIONS" />
+    
     <uses-feature android:name="android.software.leanback" android:required="false"/>
     <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
     <uses-feature android:name="android.hardware.faketouch" android:required="false"/>
@@ -31,6 +32,7 @@
     <uses-feature android:name="android.hardware.microphone" android:required="false"/>
     <uses-feature android:name="android.hardware.sensor" android:required="false"/>
     <uses-feature android:name="android.hardware.type.pc" android:required="false" />
+    
     <queries>
         <intent>
             <action android:name="android.intent.action.VIEW" />
@@ -57,19 +59,24 @@
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize">
+            
             <meta-data android:name="io.flutter.embedding.android.NormalTheme" android:resource="@style/NormalTheme"/>
             <meta-data android:name="firebase_crashlytics_collection_enabled" android:value="false" />
+            
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" android:required="false" />  <action android:name="com.android_package_installer.content.SESSION_API_PACKAGE_INSTALLED" android:exported="false"/>
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" android:required="false" />
+                <action android:name="com.android_package_installer.content.SESSION_API_PACKAGE_INSTALLED" android:exported="false"/>
             </intent-filter>
+            
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="karing"/>
+                <data android:scheme="lionbox"/> 
             </intent-filter>
+            
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -95,6 +102,7 @@
                 android:name="android.service.quicksettings.TOGGLEABLE_TILE"
                 android:value="true" />
         </service>
+        
         <provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.fileProvider" android:exported="false" android:grantUriPermissions="true" tools:replace="android:authorities">
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths" tools:replace="android:resource"/>
         </provider>
